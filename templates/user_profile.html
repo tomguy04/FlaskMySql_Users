@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <title>Friends</title>
+    </head>
+    <body>
+      <div id = 'wrapper'>
+        <h1>User {{user.id}}</h1>
+        <!-- we can use the line below to see all of our data in our template -->
+        <!-- with all the data we can then construct a more structured output -->
+
+        <table>
+        <tr>
+          <th>id</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Created At</th>
+        </tr>
+          <!-- special formatting for just the first date -->
+          
+          
+            <tr>
+              <td>{{user.id}}</td>
+              <td>{{user.first_name}} {{user.last_name}}</a></td>
+              <td>{{user.email}}</td>
+              <td>{{user.created_at.strftime("%B %d, %Y")}}</td>
+            </tr>
+        </table>
+        <a href="/users/{{user.id}}/edit">Edit | </a><a href="/users/{{user.id}}/destroy">Delete</a>
+    </div>
+    </body>
+</html>

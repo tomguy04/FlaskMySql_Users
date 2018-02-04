@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <title>Add user</title>
+    </head>
+    <body>
+      <div id = 'wrapper'>
+        <!-- we can use the line below to see all of our data in our template -->
+        <!-- with all the data we can then construct a more structured output -->
+        {% set counter = 0 %}
+        
+        <h2>Add a new user</h2>
+        <form action='/users/create' method='POST'>
+          <p><label for="firstname">First Name:<input type="text" name="first_name" id="first_name"></label></p>
+          <p><label for="lastname">Last Name:<input type="text" name="last_name" id="last_name"></label></p>
+          <p><label for="email">Email:<input type="text" name="email" id="email"></label></p>
+          <!-- <p><label for="name">Name:<input type="text" name="name" id="name"></label></p>
+          <p><label for="age">Age:<input type="number" name="age" id="age"></label></p>-->
+          <input type="submit" value="Add"></p>
+        </form>
+        <a href="/users">Go Back</a>
+      </div>
+    </body>
+</html>

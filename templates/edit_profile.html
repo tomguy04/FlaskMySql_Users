@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+      <title>Friends</title>
+    </head>
+    <body>
+      <div id = 'wrapper'>
+        <!-- we can use the line below to see all of our data in our template -->
+        <!-- with all the data we can then construct a more structured output -->
+
+        <h2>Edit User {{user.id}}</h2>
+        <form action='/users/{{user.id}}' method='POST'>
+          <p><label for="firstname">First Name:<input type="text" name="first_name" id="first_name"  value={{user.first_name}}></label></p>
+          <p><label for="lastname">Last Name:<input type="text" name="last_name" id="last_name" value={{user.last_name}}></label></p>
+          <p><label for="email">Email:<input type="text" name="email" id="email" value={{user.email}}></label></p>
+          <input type="hidden" name="formtype" value="update"> 
+          <input type="submit" value="Update"></p>
+        </form>         
+
+        <a href="/users/{{user.id}}">Show | </a>
+        <a href="/users">Go Back </a>
+    </div>
+    </body>
+</html>
